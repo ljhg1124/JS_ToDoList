@@ -1,6 +1,6 @@
 
 const clockContainer = document.querySelector(".js_clock");
-const clock = clockContainer.querySelector("span");
+const clock = clockContainer.querySelector("h1");
 
 function createZero(val)
 {

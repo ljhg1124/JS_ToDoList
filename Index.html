@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <!-- meta 태그 선언 구간 -->
         <meta charset="UTF-8" />
         <meta name="keyword" content="html, css, javascript, todolist" />
@@ -14,12 +13,21 @@
 
         <Title>WELCOME TO TODOLIST</Title>
     </head>
-    
+
     <body>
-        <div class="js_clock clock">
-            <span>00 : 00</span>
+        <div class="main-view">
+            <div class="clock-area">
+                <div class="time">
+                <span class="hour">00</span>
+                <span>:</span>
+                <span class="minute">00</span>
+                <span class="second">00</span>
+                </div>
+            </div>
+            <div class="list-container"></div>
         </div>
 
+            <!--<img class="background_img" src="https://source.unsplash.com/featured/?water,mountain" /> -->
         <script src="clock.js"></script>
     </body>
 </html>
