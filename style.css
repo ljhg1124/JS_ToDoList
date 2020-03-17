@@ -1,31 +1,71 @@
 
+html,body{
+    height: 100%;
+    margin: 0;
+}
+
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    align-items: center;
+}
+#view-port{
+    position: relative;
+    height: 100%;
     display: flex;
-}
-
-.main-view{
-}
-
-.clock-area{
+    justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#main-view{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .time{
     font-size: 60px;
     font-weight: bold;
+    color: white;
+    text-shadow: 0 -3px 20px rgba(0, 0, 0, 0.1);
 }
 
 .second{
     font-size: 25px;
 }
 
-.list-container{
-    width: 400px;
-    height: 600px;
-    background-color: white;
-    border-radius: 15px;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.background_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn 0.5s linear;
+}
+
+input{
+    position: relative;
+    display: flex;
+    border: 0;
+    border-radius: 8px;
+    background: rgba(249, 249, 249, 0.42);
+    color: white;
+    font-size:  15px;
+    font-weight: normal;
+    width: 200px;
+    height: 30px;
+    padding-inline-start: 20px;
 }

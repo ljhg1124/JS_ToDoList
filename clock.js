@@ -1,6 +1,8 @@
 
-const clockContainer = document.querySelector(".js_clock");
-const clock = clockContainer.querySelector("h1");
+const clockContainer = document.querySelector(".time");
+const hours = clockContainer.querySelector(".hour");
+const minutes = clockContainer.querySelector(".minute");
+const seconds = clockContainer.querySelector(".second");
 
 function createZero(val)
 {
@@ -8,14 +10,12 @@ function createZero(val)
 }
 
 (function init(){
-
     setInterval((function getTime(){
         const date = new Date();
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
-        const seconds = date.getSeconds();
 
-        clock.innerText = `${createZero(hours)}:${createZero(minutes)}:${createZero(seconds)}`
-    }), 1000);
+        hours.innerText = `${createZero(date.getHours())}`;
+        minutes.innerText = `${createZero(date.getMinutes())}`;
+        seconds.innerText = `${createZero(date.getSeconds())}`;
+    }), 1000)();
 })()
 
