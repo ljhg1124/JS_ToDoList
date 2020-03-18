@@ -11,9 +11,27 @@ body{
     position: relative;
     height: 100%;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.25);
+}
+
+#inputTodo{
+    position: relative;
+    display: flex;
+    border: 0;
+    border-radius: 8px;
+    background: rgba(249, 249, 249, 0.42);
+    font-size:  15px;
+    font-weight: normal;
+    width: 400px;
+    height: 30px;
+    padding-inline-start: 20px;
+}
+
+input::-webkit-input-placeholder{
+    color: white;
 }
 
 #main-view{
@@ -22,17 +40,23 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100px;
+}
+
+#list{
+    
 }
 
 .time{
-    font-size: 60px;
+    font-size: 100px;
     font-weight: bold;
     color: white;
     text-shadow: 0 -3px 20px rgba(0, 0, 0, 0.1);
+    padding-top: 100px;
 }
 
 .second{
-    font-size: 25px;
+    font-size: 30px;
 }
 
 
@@ -54,18 +78,4 @@ body{
     height: 100%;
     z-index: -1;
     animation: fadeIn 0.5s linear;
-}
-
-input{
-    position: relative;
-    display: flex;
-    border: 0;
-    border-radius: 8px;
-    background: rgba(249, 249, 249, 0.42);
-    color: white;
-    font-size:  15px;
-    font-weight: normal;
-    width: 200px;
-    height: 30px;
-    padding-inline-start: 20px;
 }

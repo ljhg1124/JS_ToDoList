@@ -18,24 +18,24 @@
         <img class="background_img" src="https://source.unsplash.com/featured/?water,mountain" />
 
         <div id="view-port">
-            
-            <div id="main-view">
-                <form>
-                    <input type="text" placeholder="오늘의 할일!" />
-                </form>
-            </div>
-
-
             <div class="time">
                 <span class="hour">00</span>
                 <span>:</span>
                 <span class="minute">00</span>
                 <span class="second">00</span>
             </div>
-            
+
+            <div id="main-view">
+                <form class="toDoFrom">
+                    <input id="inputTodo" class="addTodo" type="text" placeholder="오늘의 할일!" />
+                </form>
+                <ul class="toDoList">
+                </ul>
+            </div>
         </div>
 
             
         <script src="clock.js"></script>
+        <script src="todo.js"></script>
     </body>
 </html>
