@@ -15,6 +15,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.25);
+    overflow: auto;
 }
 
 ul{
@@ -47,7 +48,7 @@ input::-webkit-input-placeholder{
     padding-top: 20px;
 }
 
-#list{
+.list{
     position: relative;
     display: flex;
     align-items: center;
@@ -67,6 +68,10 @@ input::-webkit-input-placeholder{
     display: flex;
     align-items: center;
     padding-inline-start: 10px;
+}
+
+#list-delete{
+    margin-right: 10px;
 }
 
 #list-item-done{

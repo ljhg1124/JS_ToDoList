@@ -20,24 +20,46 @@ function listAchievement(event){
     } else {
         span.id = "list-item";
     }
+}
+
+function deleteList(event){
+    const checkbox = event.target;
+    const li = checkbox.parentNode;
     
+    todoList.removeChild(li);
+
+    const cleanToDos = toDos.filter(function(toDo){
+        return toDo.id !== parseInt(li.id);
+    });
+
+    toDos = cleanToDos;
+
+    console.log(toDos);
+    saveTodo();
 }
 
 function addToDoList(text){
     const li = document.createElement("li");
     const input = document.createElement("input");
+    const bt = document.createElement("button");
     const span = document.createElement("span");
-    const newId = "list";
+    const newId = toDos.length + 1;
 
     input.type = "checkbox";
     input.addEventListener("change", listAchievement);
+
+    bt.id = "list-delete";
+    bt.innerText = "X";
+    bt.addEventListener("click",deleteList);
 
     span.id = "list-item";
     span.innerText = text;
 
     li.id = newId;
+    li.className = "list";
     li.appendChild(input);
     li.appendChild(span);
+    li.appendChild(bt);
    
 
     todoList.appendChild(li);
@@ -55,8 +77,11 @@ function handleSubmit(event){
     event.preventDefault(); // 서밋시 발생하는 페이지 이동 이벤트 기능을 막아준다.
     const val = todoInput.value;
 
-    // 리스트 추가
-    addToDoList(val); 
+    // 값이 존재할때만 리스트 추가
+    if(val)
+    {
+        addToDoList(val); 
+    }
 
     todoInput.value = ""; // 데이터 출력 후 초기화 하는 부분.
 }
