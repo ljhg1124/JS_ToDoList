@@ -11,12 +11,34 @@ function saveTodo()
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }
 
+function listAchievement(event){
+    const checkbox = event.target;
+    const li = checkbox.parentNode;
+    const span = li.querySelector("span");
+    if(event.target.checked){
+        span.id = "list-item-done";
+    } else {
+        span.id = "list-item";
+    }
+    
+}
+
 function addToDoList(text){
     const li = document.createElement("li");
-    const newId = "list"
+    const input = document.createElement("input");
+    const span = document.createElement("span");
+    const newId = "list";
 
-    li.innerText = text;
+    input.type = "checkbox";
+    input.addEventListener("change", listAchievement);
+
+    span.id = "list-item";
+    span.innerText = text;
+
     li.id = newId;
+    li.appendChild(input);
+    li.appendChild(span);
+   
 
     todoList.appendChild(li);
 
