@@ -77,7 +77,7 @@ function handleSubmit(event){
     event.preventDefault(); // 서밋시 발생하는 페이지 이동 이벤트 기능을 막아준다.
     const val = todoInput.value;
 
-    // 값이 존재할때만 리스트 추가
+    //리스트 추가
     if(val)
     {
         addToDoList(val); 
