@@ -14,11 +14,11 @@ function saveTodo()
 function listAchievement(event){
     const checkbox = event.target;
     const li = checkbox.parentNode;
-    const span = li.querySelector("span");
+    const textInput = li.querySelector(".input");
     if(event.target.checked){
-        span.id = "list-item-done";
+        textInput.id = "list-item-done";
     } else {
-        span.id = "list-item";
+        textInput.id = "list-item";
     }
 }
 
@@ -34,15 +34,22 @@ function deleteList(event){
 
     toDos = cleanToDos;
 
-    console.log(toDos);
     saveTodo();
+}
+
+function updateList(event){
+    event.preventDefault();
+
+    
+
 }
 
 function addToDoList(text){
     const li = document.createElement("li");
     const input = document.createElement("input");
     const bt = document.createElement("button");
-    const span = document.createElement("span");
+    const textInput = document.createElement("input");
+    const form = document.createElement("form");
     const newId = toDos.length + 1;
 
     input.type = "checkbox";
@@ -52,16 +59,20 @@ function addToDoList(text){
     bt.innerText = "X";
     bt.addEventListener("click",deleteList);
 
-    span.id = "list-item";
-    span.innerText = text;
+    textInput.id = "list-item";
+    textInput.type = "text";
+    textInput.className = "input";
+    textInput.value = text;
+    
+    form.appendChild(textInput);
+    form.addEventListener("submit", updateList);
 
     li.id = newId;
     li.className = "list";
     li.appendChild(input);
-    li.appendChild(span);
+    li.appendChild(form);
     li.appendChild(bt);
    
-
     todoList.appendChild(li);
 
     const toDoObj = {

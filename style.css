@@ -61,13 +61,19 @@ input::-webkit-input-placeholder{
     margin-top: 5px;
 }
 
-#list-item{
+.input{
     width: 100%;
     height: 100%;
     margin: 0;
+    border: 0;
     display: flex;
     align-items: center;
     padding-inline-start: 10px;
+    background-color: transparent;
+}
+
+#list-item{
+    opacity: 1;
 }
 
 #list-delete{
@@ -75,14 +81,9 @@ input::-webkit-input-placeholder{
 }
 
 #list-item-done{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    padding-inline-start: 10px;
     opacity: 0.5;
     text-decoration: line-through;
+    pointer-events: none;
 }
 
 .time{
