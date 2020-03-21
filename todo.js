@@ -26,8 +26,11 @@ function deleteList(event){
     const checkbox = event.target;
     const li = checkbox.parentNode;
     
+    // 자식 태그 삭제. 저장된 데이터가 삭제 되진 않음.
     todoList.removeChild(li);
 
+
+    // filtr 메소드를 이용해 필요한 데이터를 걸러낸다.
     const cleanToDos = toDos.filter(function(toDo){
         return toDo.id !== parseInt(li.id);
     });
@@ -39,9 +42,11 @@ function deleteList(event){
 
 function updateList(event){
     event.preventDefault();
+    const input = event.target.querySelector("input");
+    const idval = event.target.offsetParent.id - 1;
 
-    
-
+    toDos[idval].text = input.value;
+    saveTodo();
 }
 
 function addToDoList(text){
