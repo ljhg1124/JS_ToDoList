@@ -17,8 +17,16 @@ function getTime(){
     seconds.innerText = `${createZero(date.getSeconds())}`;
 }
 
+function getTimeAmPm(){
+    const date = new Date();
+
+    hours.innerText = `${createZero(date.getHours() % 12)}`;
+    minutes.innerText = `${createZero(date.getMinutes())}`;
+    seconds.innerText = `${createZero(date.getSeconds())}`;
+}
+
 (function init(){
-    getTime();
-    setInterval(getTime, 1000);
+    getTimeAmPm();
+    setInterval(getTimeAmPm, 1000);
 })()
 
