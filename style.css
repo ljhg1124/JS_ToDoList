@@ -67,7 +67,6 @@ input::-webkit-input-placeholder{
     margin: 0;
     border: 0;
     display: flex;
-    align-items: center;
     padding-inline-start: 10px;
     background-color: transparent;
 }
@@ -76,8 +75,12 @@ input::-webkit-input-placeholder{
     opacity: 1;
 }
 
+#list-form{
+    width: 100%;
+}
+
 #list-delete{
-    margin-right: 10px;
+    margin-right: 10px ;
 }
 
 #list-item-done{
@@ -89,6 +92,7 @@ input::-webkit-input-placeholder{
 .time{
     font-size: 100px;
     font-weight: bold;
+    display: flex;
     color: white;
     text-shadow: 0 -3px 20px rgba(0, 0, 0, 0.1);
     padding-top: 100px;
@@ -96,7 +100,15 @@ input::-webkit-input-placeholder{
 
 #second_eara{
     font-size: 30px;
-    display: inline-block;
+    margin-inline-start: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.ampm{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 

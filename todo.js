@@ -69,6 +69,7 @@ function addToDoList(text){
     textInput.className = "input";
     textInput.value = text;
     
+    form.id = "list-form";
     form.appendChild(textInput);
     form.addEventListener("submit", updateList);
 
