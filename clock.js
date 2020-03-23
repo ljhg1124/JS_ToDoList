@@ -22,16 +22,12 @@ function getTime(){
 // 12시간 am pm 표기
 function getTimeAmPm(){
     const date = new Date();
-
-    hours.innerText = `${createZero(date.getHours() % 12)}`;
+    const hour12 = date.getHours() % 12;
+    hours.innerText = `${createZero(hour12 ? hour12 : 12 )}`;
     minutes.innerText = `${createZero(date.getMinutes())}`;
     seconds.innerText = `${createZero(date.getSeconds())}`;
 
-    if(date.getHours() < 12){
-        ampm.innerText = "AM"
-    } else {
-        ampm.innerText = "PM"
-    }
+    ampm.innerText = date.getHours() < 12 ? "AM" : "PM";
 }
 
 (function init(){
