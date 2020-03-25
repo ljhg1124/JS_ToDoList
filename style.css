@@ -39,6 +39,10 @@ input::-webkit-input-placeholder{
     color: white;
 }
 
+input:focus{
+    font-size: 20px;
+}
+
 #main-view{
     position: relative;
     display: flex;
